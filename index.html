@@ -4,14 +4,42 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        html,
+        body{
+            height: 100%;
+        }
         .slide{
-            height:8px;
+            height: 8px;
             background-color: dimgrey;
+            z-index: 2;
+            overflow: hidden;
+       }
+        .slide:hover,
+        .slide:active{
+            cursor: pointer;
        }
         .prog{
             height:8px;
             width: 0;
             background-color: deepskyblue;
+        }
+        .player{
+            margin: 50px 0;
+        }
+        .modal{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: none;
+            cursor: pointer;
+        }
+        .visible{
+            display: initial;
         }
     </style>
 </head>
@@ -19,20 +47,24 @@
 <div>hello</div>
 
 <div class="player">
-    <div class="controls">
-        <button>prev</button>
-        <button>play</button>
-        <button>next</button>
+    <div class="playlist">
+        <ul>Loading...</ul>
     </div>
-    <div class="slide">
-        <div class="prog"></div>
+    <div class="controls">
+        <button onClick="player.prevTrack()">prev</button>
+        <button>play</button>
+        <button onClick="player.nextTrack()">next</button>
+    </div>
+    <div class="player__main">
+        <div class="player__info"></div>
+        <div class="slide">
+            <div class="prog"></div>
+        </div>
     </div>
 </div>
+<div class="modal"></div>
 
-
-<audio id="first" controls>[eq
-    <source  src="https://cs1-65v4.vk-cdn.net/p7/26f33406504e23.mp3?extra=dFcni0GCcuvJguKNcga37Xod2u2qqNEsE-0TyahZ7xpNmPGuSUw_63vhByG501VbFgMJI0xW_-PesQwvW6IUe2iKrTQVPgHyfqJDbGDiUvAvHYU-_J8XHfgAXb2BJxTiBX1Fcj3vWZQ" type='audio/mpeg; codecs="mp3"'>
-</audio>
+<audio id="first" controls></audio>
 
 <script src="index.js"></script>
 </body>
