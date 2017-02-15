@@ -1,0 +1,199 @@
+$blue: #6ce
+$white: #fdfdfd
+$grey: #2e303f
+$light-grey: #677084
+.blue
+  color: $blue !important
+.blue-border
+  border-color: $blue !important
+html,
+body
+  height: 100%
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+button
+  border: 0
+  background-color: transparent
+  font: inherit
+  color: inherit
+  text-transform: inherit
+  &:focus
+    outline: 0
+input
+  background-color: transparent
+  border: 0
+  &:focus
+    outline: 0
+ul
+  list-style-type: none
+body
+  font-size: 14px
+  font-weight: 300
+  color: $white
+  font-family: 'Roboto', sans-serif
+
+.container
+  max-width: 1170px
+  margin: auto
+
+header
+  background: url('img/bg.jpg') no-repeat 0 0
+  background-size: cover
+  height: 100%
+  position: relative
+  display: flex
+  flex-flow: column
+  justify-content: space-between
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0,0,0, .8)
+.header__top
+  height: 80px
+  background-color: rgba(21,22,26, .5)
+  color: $white
+  position: relative
+  z-index: 2
+  .container
+    line-height: 80px
+    display: flex
+    justify-content: space-between
+
+  .logo
+    text-transform: uppercase
+    &--rock
+      color: $blue
+  .sign
+    color: $blue
+    text-transform: uppercase
+    font-weight: 500
+    &__up
+      color: $white
+.header__center
+  position: relative
+  z-index: 2
+  label
+    border-bottom: 2px solid $light-grey
+    padding-bottom: 5px
+    max-width: 700px
+    display: flex
+    margin: auto
+    align-items: center
+  input
+    width: 100%
+    font-size: 31px
+    font-weight: 700
+    color: $light-grey
+    &::placeholder
+      color: $light-grey
+  &__icon
+    font-size: 25px
+    color: $light-grey
+
+.header__bottom
+  height: 205px
+  background-color: rgba(21,22,26, .5)
+  z-index: 2
+  position: relative
+
+.player__main__top
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.player__info,
+.player__main__top__volume
+  width: 230px
+
+.player__info
+  color: $grey
+  text-transform: uppercase
+  font-weight: 500
+  font-size: 18px
+  min-height: 43px
+  &_song
+    text-transform: capitalize
+    display: block
+    color: $blue
+    margin-top: 5px
+    font-size: 16px
+.controls
+  display: flex
+  align-items: center
+.prev
+  width: 40px
+  height: 40px
+  margin: 0 10px
+  background-color: #15161a
+  border-radius: 50%
+  box-shadow:  0 0 10px rgba(0,0,0,0.5)
+  font-size: 17px
+  color: $grey
+  transition: color .5s
+  &:hover
+    color: $blue
+.play
+  width: 55px
+  height: 55px
+  font-size: 20px
+.player
+  margin: 31px 0
+
+.playlist
+  position: absolute
+  width: 500px
+  height: 250px
+  top: -250px
+  left: calc( 100% - 600px )
+  background-color: #15161a
+  padding: 0 15px
+  color: $grey
+  text-transform: capitalize
+  &__li
+    padding: 15px 15px
+    border-bottom: 2px solid $grey
+    display: block
+    position: relative
+    &::before
+      position: absolute
+      left: 0
+
+.slide
+  height: 8px
+  background-color: $grey
+  z-index: 2
+  overflow: hidden
+  border-radius: 5px
+  &:hover,
+  &:active
+    cursor: pointer
+
+.prog
+  height: 8px
+  width: 0
+  background-color: $blue
+  border-radius: 5px
+
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 10000
+  display: none
+  cursor: pointer
+
+.visible
+  display: initial
+
+
+.volume-prog
+  width: 100%
